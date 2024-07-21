@@ -8,11 +8,15 @@ use Symfony\Component\Routing\Attribute\Route;
 
 class DefaultController extends AbstractController
 {
-    #[Route('/default', name: 'app_default')]
+    #[Route('/', name: 'home')]
     public function index(): Response
     {
-        return $this->render('default/index.html.twig', [
-            'controller_name' => 'DefaultController',
-        ]);
+        return new Response("
+            <html>
+                <body>
+                    <h1>Benvenuto in Symfony!</h1>
+                </body>
+            </html>
+        ");
     }
 }
