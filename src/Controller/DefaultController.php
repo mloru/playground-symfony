@@ -11,12 +11,6 @@ class DefaultController extends AbstractController
     #[Route('/', name: 'home')]
     public function index(): Response
     {
-        return new Response("
-            <html>
-                <body>
-                    <h1>Benvenuto in Symfony!</h1>
-                </body>
-            </html>
-        ");
+        return $this->render('index.html.twig');
     }
 }
